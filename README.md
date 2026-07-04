@@ -29,6 +29,22 @@ docker run -p 80:80 ghcr.io/blackcandy-org/blackcandy:latest
 docker run -p 80:80 blackcandy/blackcandy:latest 
 ```
 
+or if you are using Docker Compose:
+
+```YAML
+services:
+  app:
+    container_name: 'blackcandy_app'
+    image: ghcr.io/blackcandy-org/blackcandy:latest
+    ports:
+      - "3000:80"
+    volumes:
+      - ./storage_data:/app/storage # Application Data storage
+      - /media_data:/media_data # Your media goes here
+    environment:
+      MEDIA_PATH: /media_data
+```
+
 That's all. Now, you can access either http://localhost or http://host-ip in a browser, and use initial admin user to log in (email: admin@admin.com, password: foobar).
 
 ## Upgrade
