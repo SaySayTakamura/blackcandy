@@ -57,17 +57,17 @@ That's all. Now, you can access either http://localhost or http://host-ip in a b
 Upgrade Black Candy is pull new image from remote. Then remove an old container and create a new one.
 
 ```shell
-docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker stop <your_blackcandy_container>
 docker rm <your_blackcandy_container>
+docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker run <OPTIONS> ghcr.io/blackcandy-org/blackcandy:latest 
 ```
 
 With docker compose, you can upgrade Black Candy like this:
 
 ```shell
-docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker-compose down
+docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker-compose up
 ```
 
