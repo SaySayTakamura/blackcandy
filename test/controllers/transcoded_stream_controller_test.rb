@@ -24,9 +24,7 @@ class TranscodedStreamControllerTest < ActionDispatch::IntegrationTest
     @stream_mock = StreamMock.new(songs(:flac_sample))
 
     cache_directory = "#{Stream::TRANSCODE_CACHE_DIRECTORY}/#{songs(:flac_sample).id}"
-    if Dir.exist?(cache_directory)
-      FileUtils.remove_dir(cache_directory)
-    end
+    FileUtils.rm_rf(cache_directory)
   end
 
   teardown do

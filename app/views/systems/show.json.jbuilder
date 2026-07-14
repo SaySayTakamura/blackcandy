@@ -10,3 +10,9 @@ json.min_app_version do
   json.minor BlackCandy::MinAppVersion::MINOR
   json.patch BlackCandy::MinAppVersion::PATCH
 end
+
+json.min_cli_version do
+  json.major BlackCandy::MinCliVersion::MAJOR
+  json.minor BlackCandy::MinCliVersion::MINOR
+  json.patch BlackCandy::MinCliVersion::PATCH
+end

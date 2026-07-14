@@ -22,4 +22,14 @@ class SystemsControllerTest < ActionDispatch::IntegrationTest
     assert_equal BlackCandy::MinAppVersion::MINOR, response["minor"]
     assert_equal BlackCandy::MinAppVersion::PATCH, response["patch"]
   end
+
+  test "should get minimum cli version via api" do
+    get system_url, as: :json
+    response = @response.parsed_body["min_cli_version"]
+
+    assert_response :success
+    assert_equal BlackCandy::MinCliVersion::MAJOR, response["major"]
+    assert_equal BlackCandy::MinCliVersion::MINOR, response["minor"]
+    assert_equal BlackCandy::MinCliVersion::PATCH, response["patch"]
+  end
 end
